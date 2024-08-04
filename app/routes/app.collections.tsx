@@ -1,6 +1,6 @@
 import type { LoaderFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import { Card, Layout, Page } from "@shopify/polaris";
+import { Card, Layout, List, Page } from "@shopify/polaris";
 import { apiVersion, authenticate } from "~/shopify.server";
 
 // Graphql query for get list products
@@ -58,19 +58,42 @@ export const loader: LoaderFunction = async ({request}) => {
 }
 
 // Render collections in Admin page
+
+
 const Collections = () => {
-    const collections: any = useLoaderData();
-    console.log(collections, 'collections');
+    const collections: any = useLoaderData()
+    console.log(collections, 'collections')
 
   return (
-    <Page>
-        <Layout>
-            <Layout.Section>
-                <Card><h1>Hello !</h1></Card>
-            </Layout.Section>
-        </Layout>
-    </Page>
-  )
-}
+  <Page>
+    <Layout>
+        <Layout.Section>
+            <Card><h1>hello world</h1></Card>
+        </Layout.Section>
+        <Layout.Section>
+            <Card>
+                <List type="bullet" gap="loose">
+                    {
+                        collections.map((edge: any) => {
+                            const {node: collection } = edge;
+                            
+                            return (
+                                <List.Item key={collection.id}>
+                                    <h2>{collection.title}</h2>
+                                    <h2>{collection.description}</h2>
+                                </List.Item>
+                            );
+                        })
+                    }
+
+                </List>
+            </Card>
+
+        </Layout.Section>
+    </Layout>
+</Page>
+  );
+};
+
 
 export default Collections;
