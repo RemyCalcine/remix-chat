@@ -3,7 +3,7 @@
 client_id = "9addba3cc6d12653b8b4de5eb4ed2670"
 name = "remix-chat"
 handle = "remix-chat-145"
-application_url = "https://horse-serving-ferrari-native.trycloudflare.com"
+application_url = "https://efforts-characters-worse-millennium.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_products,write_products"
 
 [auth]
 redirect_urls = [
-  "https://horse-serving-ferrari-native.trycloudflare.com/auth/callback",
-  "https://horse-serving-ferrari-native.trycloudflare.com/auth/shopify/callback",
-  "https://horse-serving-ferrari-native.trycloudflare.com/api/auth/callback"
+  "https://efforts-characters-worse-millennium.trycloudflare.com/auth/callback",
+  "https://efforts-characters-worse-millennium.trycloudflare.com/auth/shopify/callback",
+  "https://efforts-characters-worse-millennium.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

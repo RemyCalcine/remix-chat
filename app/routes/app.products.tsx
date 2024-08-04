@@ -3,10 +3,10 @@ import { useLoaderData } from "@remix-run/react";
 import { Card, Layout, List, Page } from "@shopify/polaris";
 import { apiVersion, authenticate } from "~/shopify.server";
 
-// Graphql query for get list collections
-export const query = `
+// Graphql query for get list products
+export const query =`
 {
-    collections(first: 10){
+    products(first: 5){
         edges{
             node{
                 id
@@ -23,78 +23,76 @@ export const query = `
 `;
 
 // Connect to collections in loader page
-export const loader: LoaderFunction = async ({request}) => {
-    const { session } = await authenticate.admin(request);
-    const { shop, accessToken } = session;
+export const loader: LoaderFunction = async ({ request }) => {
+
+    const { session } = await authenticate.admin(request)
+    const {shop, accessToken } = session;
 
     try {
+
         const response = await fetch(`https://${shop}/admin/api/${apiVersion}/graphql.json`, {
             method: "POST",
             headers: {
-                "Content-Type": 'application/graphql',
+                "Content-Type": "application/graphql",
                 "X-Shopify-Access-Token": accessToken!
             },
             body: query
+
         });
 
-        if(response.ok) {
-            const data = await response.json();
+        if(response.ok){
+            const data = await response.json()
 
             const {
                 data: {
-                    collections: { edges }
+                    products: { edges }  
                 }
             } = data;
-
-            return edges;
+            return edges
         }
 
-        return null;
-    } catch(error) {
-        console.error(error);
+        return null
 
-        return null;
+    } catch(err){
+        console.log(err)
     }
+    
 }
 
 // Render collections in Admin page
+const Products = () => {
+    const products: any = useLoaderData()
+
+    console.log(products, 'products')
 
 
-const Collections = () => {
-    const collections: any = useLoaderData()
-    console.log(collections, 'collections')
-
-  return (
-  <Page>
+  return (<Page>
     <Layout>
         <Layout.Section>
-            <Card><h1>My Collections</h1></Card>
+            <Card><h1>My Products</h1></Card>
         </Layout.Section>
-        
+
         <Layout.Section>
             <Card>
-                <List type="bullet" gap="loose">
+            <List type="bullet" gap="loose">
                     {
-                        collections.map((edge: any) => {
-                            const {node: collection } = edge;
-                            
+                        products.map((edge: any) => {
+                            const {node: products } = edge;
                             return (
-                                <List.Item key={collection.id}>
-                                    <h2>{collection.title}</h2>
-                                    <h2>{collection.description}</h2>
+                                <List.Item key={products.id}>
+                                    <h2>{products.title}</h2>
+                                    <h2>{products.description}</h2>
                                 </List.Item>
-                            );
+                            )
                         })
                     }
 
                 </List>
             </Card>
-
         </Layout.Section>
     </Layout>
-</Page>
-  );
+  </Page>);
 };
 
 
-export default Collections;
+export default Products;
