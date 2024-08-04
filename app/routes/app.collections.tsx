@@ -3,7 +3,7 @@ import { useLoaderData } from "@remix-run/react";
 import { Card, Layout, List, Page } from "@shopify/polaris";
 import { apiVersion, authenticate } from "~/shopify.server";
 
-// Graphql query for get list products
+// Graphql query for get list pages
 export const query = `
 {
     collections(first: 10){
