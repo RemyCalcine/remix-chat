@@ -21,6 +21,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
       break;
       break;
     case "CARTS_CREATE":
+      // Add Webhooks CARTS_CREATE for test
       console.log(payload);
       break;
     case "CUSTOMERS_DATA_REQUEST":

@@ -3,6 +3,7 @@ import { useLoaderData } from "@remix-run/react";
 import { Card, Layout, Page } from "@shopify/polaris";
 import { apiVersion, authenticate } from "~/shopify.server";
 
+// Graphql query for get list products
 export const query = `
 {
     collections(first: 10){
@@ -21,6 +22,7 @@ export const query = `
 }
 `;
 
+// Connect to collections in loader page
 export const loader: LoaderFunction = async ({request}) => {
     const { session } = await authenticate.admin(request);
     const { shop, accessToken } = session;
@@ -55,6 +57,7 @@ export const loader: LoaderFunction = async ({request}) => {
     }
 }
 
+// Render collections in Admin page
 const Collections = () => {
     const collections: any = useLoaderData();
     console.log(collections, 'collections');

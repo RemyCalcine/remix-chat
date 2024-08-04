@@ -20,6 +20,7 @@ const shopify = shopifyApp({
   distribution: AppDistribution.AppStore,
   restResources,
   webhooks: {
+    // Add Webhook CARTS_CREATE
     CARTS_CREATE: {
       deliveryMethod: DeliveryMethod.Http,
       callbackUrl: "/webhooks",

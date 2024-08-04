@@ -26,6 +26,7 @@ export default function App() {
           Home
         </Link>
         <Link to="/app/additional">Additional page</Link>
+        // Add new link for collection
         <Link to="/app/collections">Collections</Link>
       </NavMenu>
       <Outlet />
