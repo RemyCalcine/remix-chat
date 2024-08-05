@@ -30,6 +30,8 @@ export default function App() {
         <Link to="/app/collections">Collections</Link>
         // Add new link for products
         <Link to="/app/products">Products</Link>
+        // Add new link for inventory
+        <Link to="/app/inventory">Inventory</Link>
       </NavMenu>
       <Outlet />
     </AppProvider>
