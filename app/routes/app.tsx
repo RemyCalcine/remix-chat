@@ -32,6 +32,7 @@ export default function App() {
         <Link to="/app/products">Products</Link>
         // Add new link for inventory
         <Link to="/app/inventory">Inventory</Link>
+        <Link to="/app/discounts">Discounts</Link>
       </NavMenu>
       <Outlet />
     </AppProvider>

@@ -3,7 +3,7 @@
 client_id = "9addba3cc6d12653b8b4de5eb4ed2670"
 name = "remix-chat"
 handle = "remix-chat-145"
-application_url = "https://handles-privileges-china-equation.trycloudflare.com"
+application_url = "https://yet-inquiries-briefs-monthly.trycloudflare.com"
 embedded = true
 
 [build]
@@ -13,13 +13,13 @@ include_config_on_deploy = true
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "read_inventory,read_products,write_inventory,write_products"
+scopes = "read_inventory,read_products,write_discounts,write_inventory,write_products"
 
 [auth]
 redirect_urls = [
-  "https://handles-privileges-china-equation.trycloudflare.com/auth/callback",
-  "https://handles-privileges-china-equation.trycloudflare.com/auth/shopify/callback",
-  "https://handles-privileges-china-equation.trycloudflare.com/api/auth/callback"
+  "https://yet-inquiries-briefs-monthly.trycloudflare.com/auth/callback",
+  "https://yet-inquiries-briefs-monthly.trycloudflare.com/auth/shopify/callback",
+  "https://yet-inquiries-briefs-monthly.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
