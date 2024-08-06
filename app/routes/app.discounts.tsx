@@ -13,7 +13,7 @@ export const action: ActionFunction = async ({ request }) => {
 
 
     const dynamicTitle = formData.get('discountTitlee');
-    console.log(dynamicTitle, 'dynamicTitle')
+    const dynamicDiscountAmount = formData.get('discountAmount');
 
     try {
 
@@ -81,7 +81,7 @@ export const action: ActionFunction = async ({ request }) => {
                     customerGets: {
                       value: {
                         discountAmount: {
-                          amount: discountAmount,
+                          amount: dynamicDiscountAmount,
                           appliesOnEachItem: false,
                         },
                       },
@@ -115,7 +115,8 @@ export const action: ActionFunction = async ({ request }) => {
 
 const Discounts = () => {
 
-    const [discountTitlee, setDiscountTitlee] = useState('')
+    const [discountTitlee, setDiscountTitlee] = useState('');
+    const [discountAmount, setDiscountAmount] = useState('');
 
     const submit = useSubmit();
     const actionData = useActionData<typeof action>();
@@ -127,16 +128,26 @@ const Discounts = () => {
     <Page>
         <Card>
             <Form onSubmit={generateDiscount} method="post">
-            <TextField
-             id="discountTitlee"
-             name="discountTitlee"
-             label="title"
-             autoComplete="off"
-             value={discountTitlee}
-             onChange={(value) => setDiscountTitlee(value)}
-    />
+              <TextField
+              id="discountTitlee"
+              name="discountTitlee"
+              label="Title"
+              autoComplete="off"
+              value={discountTitlee}
+              onChange={(value) => setDiscountTitlee(value)}
+              />
+              <br />
+              <TextField
+              id="discountAmount"
+              name="discountAmount"
+              type="number"
+              label="Amount"
+              autoComplete="off"
+              value={discountAmount}
+              onChange={(value) => setDiscountAmount(value)}
+              />
+              <br />
               <Button submit>create Discount</Button>
-     
             </Form>
             
         </Card>
