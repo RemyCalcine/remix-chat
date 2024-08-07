@@ -3,7 +3,7 @@
 client_id = "9addba3cc6d12653b8b4de5eb4ed2670"
 name = "remix-chat"
 handle = "remix-chat-145"
-application_url = "https://dod-emerging-investments-excellent.trycloudflare.com"
+application_url = "https://singh-onion-admin-from.trycloudflare.com"
 embedded = true
 
 [build]
@@ -13,13 +13,13 @@ include_config_on_deploy = true
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "read_inventory,read_products,write_discounts,write_inventory,write_products"
+scopes = "read_inventory,read_products,write_discounts,write_inventory,write_products,wrtite_customers"
 
 [auth]
 redirect_urls = [
-  "https://dod-emerging-investments-excellent.trycloudflare.com/auth/callback",
-  "https://dod-emerging-investments-excellent.trycloudflare.com/auth/shopify/callback",
-  "https://dod-emerging-investments-excellent.trycloudflare.com/api/auth/callback"
+  "https://singh-onion-admin-from.trycloudflare.com/auth/callback",
+  "https://singh-onion-admin-from.trycloudflare.com/auth/shopify/callback",
+  "https://singh-onion-admin-from.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
