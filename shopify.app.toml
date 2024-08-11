@@ -3,7 +3,7 @@
 client_id = "9addba3cc6d12653b8b4de5eb4ed2670"
 name = "remix-chat"
 handle = "remix-chat-145"
-application_url = "https://singh-onion-admin-from.trycloudflare.com"
+application_url = "https://parks-print-egypt-was.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_inventory,read_products,write_discounts,write_inventory,write_pro
 
 [auth]
 redirect_urls = [
-  "https://singh-onion-admin-from.trycloudflare.com/auth/callback",
-  "https://singh-onion-admin-from.trycloudflare.com/auth/shopify/callback",
-  "https://singh-onion-admin-from.trycloudflare.com/api/auth/callback"
+  "https://parks-print-egypt-was.trycloudflare.com/auth/callback",
+  "https://parks-print-egypt-was.trycloudflare.com/auth/shopify/callback",
+  "https://parks-print-egypt-was.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
